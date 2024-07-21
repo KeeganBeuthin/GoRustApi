@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["input_reader","lexer","n_triples_parser","rdf_parser","turtle_parser"]};

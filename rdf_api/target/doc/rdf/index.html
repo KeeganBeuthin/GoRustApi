@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="rdf-rs"><title>rdf - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="rdf" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0 (129f3b996 2024-06-10)" data-channel="1.79.0" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../static.files/storage-e32f0c247825364d.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../rdf/index.html">rdf</a><span class="version">0.1.4</span></h2></div><div class="sidebar-elems"><ul class="block"><li><a id="all-types" href="all.html">All Items</a></li></ul><section><ul class="block"><li><a href="#modules">Modules</a></li><li><a href="#types">Type Aliases</a></li></ul></section></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../rdf/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Type ‘S’ or ‘/’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings">Settings</a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Crate <a class="mod" href="#">rdf</a><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><span class="out-of-band"><a class="src" href="../src/rdf/lib.rs.html#1-135">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="rdf-rs"><a class="doc-anchor" href="#rdf-rs">§</a>rdf-rs</h2>
+<p>A crate for the Resource Description Framework (RDF) and SPARQL.</p>
+<hr />
+<p>This crate enables to parse certain RDF formats to an RDF graph, as well as writing
+an RDF graph as RDF syntax.</p>
+<p>Currently supported RDF formats are:</p>
+<ul>
+<li>Turtle</li>
+<li>N-Triples</li>
+</ul>
+<h3 id="usage"><a class="doc-anchor" href="#usage">§</a>Usage</h3>
+<p>Each module contains a comprehensive documentation with usage examples.
+In the following, only the basic functionality is introduced.</p>
+<p>RDF triples can be stored and represented in a graph.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>rdf::graph::Graph;
+<span class="kw">use </span>rdf::uri::Uri;
+<span class="kw">use </span>rdf::triple::Triple;
+
+<span class="kw">let </span><span class="kw-2">mut </span>graph = Graph::new(<span class="prelude-val">None</span>);
+
+<span class="kw">let </span>subject = graph.create_blank_node();
+<span class="kw">let </span>predicate = graph.create_uri_node(<span class="kw-2">&amp;</span>Uri::new(<span class="string">"http://example.org/show/localName"</span>.to_string()));
+<span class="kw">let </span>object = graph.create_blank_node();
+<span class="kw">let </span>triple = Triple::new(<span class="kw-2">&amp;</span>subject, <span class="kw-2">&amp;</span>predicate, <span class="kw-2">&amp;</span>object);
+
+graph.add_triple(<span class="kw-2">&amp;</span>triple);</code></pre></div>
+<p>RDF graphs can be serialized to a supported format.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>rdf::writer::n_triples_writer::NTriplesWriter;
+<span class="kw">use </span>rdf::writer::rdf_writer::RdfWriter;
+<span class="kw">use </span>rdf::graph::Graph;
+<span class="kw">use </span>rdf::uri::Uri;
+<span class="kw">use </span>rdf::triple::Triple;
+
+<span class="kw">let </span>writer = NTriplesWriter::new();
+
+<span class="kw">let </span><span class="kw-2">mut </span>graph = Graph::new(<span class="prelude-val">None</span>);
+<span class="kw">let </span>subject = graph.create_blank_node();
+<span class="kw">let </span>predicate = graph.create_uri_node(<span class="kw-2">&amp;</span>Uri::new(<span class="string">"http://example.org/show/localName"</span>.to_string()));
+<span class="kw">let </span>object = graph.create_blank_node();
+<span class="kw">let </span>triple = Triple::new(<span class="kw-2">&amp;</span>subject, <span class="kw-2">&amp;</span>predicate, <span class="kw-2">&amp;</span>object);
+
+graph.add_triple(<span class="kw-2">&amp;</span>triple);
+
+<span class="macro">assert_eq!</span>(writer.write_to_string(<span class="kw-2">&amp;</span>graph).unwrap(),
+           <span class="string">"_:auto0 &lt;http://example.org/show/localName&gt; _:auto1 .\n"</span>.to_string());</code></pre></div>
+<p>RDF syntax can also be parsed and transformed into an RDF graph.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>rdf::reader::turtle_parser::TurtleParser;
+<span class="kw">use </span>rdf::reader::rdf_parser::RdfParser;
+<span class="kw">use </span>rdf::uri::Uri;
+
+<span class="kw">let </span>input = <span class="string">"@base &lt;http://example.org/&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+&lt;http://www.w3.org/2001/sw/RDFCore/ntriples/&gt; rdf:type foaf:Document ;
+    &lt;http://purl.org/dc/terms/title&gt; \"N-Triples\"@en-US ;
+    foaf:maker _:art ."</span>;
+
+<span class="kw">let </span><span class="kw-2">mut </span>reader = TurtleParser::from_string(input.to_string());
+
+<span class="kw">match </span>reader.decode() {
+  <span class="prelude-val">Ok</span>(graph) =&gt; {
+    <span class="macro">assert_eq!</span>(graph.count(), <span class="number">3</span>);
+    <span class="macro">assert_eq!</span>(graph.namespaces().len(), <span class="number">2</span>);
+    <span class="macro">assert_eq!</span>(graph.base_uri(), <span class="kw-2">&amp;</span><span class="prelude-val">Some</span>(Uri::new(<span class="string">"http://example.org/"</span>.to_string())))
+  },
+  <span class="prelude-val">Err</span>(<span class="kw">_</span>) =&gt; <span class="macro">assert!</span>(<span class="bool-val">false</span>)
+}</code></pre></div>
+</div></details><h2 id="modules" class="section-header">Modules<a href="#modules" class="anchor">§</a></h2><ul class="item-table"><li><div class="item-name"><a class="mod" href="error/index.html" title="mod rdf::error">error</a></div></li><li><div class="item-name"><a class="mod" href="graph/index.html" title="mod rdf::graph">graph</a></div></li><li><div class="item-name"><a class="mod" href="namespace/index.html" title="mod rdf::namespace">namespace</a></div></li><li><div class="item-name"><a class="mod" href="node/index.html" title="mod rdf::node">node</a></div></li><li><div class="item-name"><a class="mod" href="reader/index.html" title="mod rdf::reader">reader</a></div></li><li><div class="item-name"><a class="mod" href="specs/index.html" title="mod rdf::specs">specs</a></div></li><li><div class="item-name"><a class="mod" href="triple/index.html" title="mod rdf::triple">triple</a></div></li><li><div class="item-name"><a class="mod" href="uri/index.html" title="mod rdf::uri">uri</a></div></li><li><div class="item-name"><a class="mod" href="writer/index.html" title="mod rdf::writer">writer</a></div></li></ul><h2 id="types" class="section-header">Type Aliases<a href="#types" class="anchor">§</a></h2><ul class="item-table"><li><div class="item-name"><a class="type" href="type.Result.html" title="type rdf::Result">Result</a></div></li></ul></section></div></main></body></html>

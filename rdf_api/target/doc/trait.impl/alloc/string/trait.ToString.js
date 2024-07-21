@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"rdf":[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.79.0/alloc/string/trait.ToString.html\" title=\"trait alloc::string::ToString\">ToString</a> for <a class=\"struct\" href=\"rdf/reader/input_reader/struct.InputChars.html\" title=\"struct rdf::reader::input_reader::InputChars\">InputChars</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

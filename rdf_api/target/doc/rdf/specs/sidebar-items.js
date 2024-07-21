@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["rdf_syntax_specs","turtle_specs","xml_specs"]};

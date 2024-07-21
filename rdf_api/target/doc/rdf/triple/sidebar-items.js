@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["TripleSegment"],"struct":["Triple","TripleStore"]};

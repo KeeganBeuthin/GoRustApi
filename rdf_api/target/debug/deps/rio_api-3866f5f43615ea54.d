@@ -1,0 +1,11 @@
+/home/keegan/Desktop/Burnt-Jam/GoRustApi/rdf_api/target/debug/deps/librio_api-3866f5f43615ea54.rmeta: /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/lib.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/formatter.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/model.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/parser.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/generalized.rs
+
+/home/keegan/Desktop/Burnt-Jam/GoRustApi/rdf_api/target/debug/deps/librio_api-3866f5f43615ea54.rlib: /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/lib.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/formatter.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/model.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/parser.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/generalized.rs
+
+/home/keegan/Desktop/Burnt-Jam/GoRustApi/rdf_api/target/debug/deps/rio_api-3866f5f43615ea54.d: /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/lib.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/formatter.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/model.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/parser.rs /home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/generalized.rs
+
+/home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/lib.rs:
+/home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/formatter.rs:
+/home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/model.rs:
+/home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/parser.rs:
+/home/keegan/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rio_api-0.8.4/src/generalized.rs:
